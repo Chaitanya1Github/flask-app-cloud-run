@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table id="customers" style="margin-top: 5px;">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+
+  <tr>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.email }}</td>
+    <td>{{ employee.phone }}</td>
+    <td>{{ employee.address }}</td>
+  </tr>
+
+</table>
+
+<button onclick="document.location=`{{ url_for('read') }}`" style="width: 10%; margin-top: 10px;" >Go Back</button>
+{% endblock %}
