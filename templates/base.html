@@ -20,7 +20,18 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ url_for('create') }}">Create Me<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('create') }}">Create<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('read') }}">Read</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('read') }}">Update</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('read') }}">Delete</a>
                 </li>
 
 

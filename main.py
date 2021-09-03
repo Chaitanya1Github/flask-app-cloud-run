@@ -2,7 +2,7 @@ import os
 from firebase_admin import firestore
 from flask import Flask, jsonify, request, render_template
 from werkzeug.utils import redirect
-# from connection import db
+from connection import db
 
 app = Flask(__name__)
 
@@ -27,9 +27,9 @@ def create():
         if address != "":
             emp['address'] = address
 
-        # db.collection('emp_collection').add(emp)
-        # return redirect('/read')
-        return emp
+        db.collection('emp_collection').add(emp)
+        return redirect('/read')
+        # return emp
 
     ################# when data comes in json form #################
     # data = request.get_json()
@@ -38,7 +38,7 @@ def create():
     # return "alright"
 
 
-'''
+
 @app.route('/read', methods=['GET'])
 def read():
     documents = db.collection('emp_collection').stream()
@@ -87,7 +87,6 @@ def delete(id):
     if request.method == 'GET':
         db.collection('emp_collection').document(id).delete()
         return redirect('/read')
-'''
 
 
 # @app.route('/delete/<id>', methods=['GET', 'POST'])
